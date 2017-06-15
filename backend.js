@@ -49,7 +49,7 @@ io.on('connection', function(client){
   }
 
   if(client.inRoom===false){
-    io.to(client.id).emit('url', "localhost:8000/join?room="+client.room);
+    io.to(client.id).emit('url', "draw-with-friends-2017.herokuapp.com/join?room="+client.room);
   }
 
   client.on('adduser', function(username){
