@@ -2,7 +2,7 @@ var express = require('express');
 var io = require('socket.io');
 
 var app = express();
-
+var PORT = process.env.PORT || 8000;
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 app.set('view engine', 'ejs');
@@ -105,4 +105,6 @@ function makeid()
 }
 
 
-http.listen(8000);
+http.listen(PORT,function(){
+  console.log('Listenning on port' + PORT);
+});
