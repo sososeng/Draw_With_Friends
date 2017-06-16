@@ -7,7 +7,7 @@ window.onload = function() {
   var past;
   var mouse_down =false;
   var penColor = 'black';
-
+  $('.openbtn').hide();
 
   var canvasjq = $('canvas');
   var h = canvasjq.height();
@@ -79,12 +79,30 @@ window.onload = function() {
     server.emit('sendchat', message);
   });
 
+  $('.closebtn').click(function(){
+    $('.chatBox').toggle( "slide" );
+    $('.openbtn').fadeIn();
+  });
+  $('.openbtn').click(function(){
+    $('.openbtn').fadeOut();
+    $('.chatBox').toggle( "slide" );
+  });
+
+$chatPanel = $('.chatPanel');
+$chatPanel[0].scrollTop = $chatPanel[0].scrollHeight;
+
   $('#data').keypress(function(e) {
     if(e.which == 13) {
+      $chatPanel = $('.chatPanel');
       $(this).blur();
       $('#datasend').focus().click();
       $('#data').focus();
+      $chatPanel.animate({ scrollTop: $chatPanel[0].scrollHeight }, "slow");
     }
   });
+
+
+
+
 
 }

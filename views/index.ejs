@@ -2,6 +2,7 @@
 
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 
   </head>
 
@@ -10,20 +11,31 @@
 
 
     <canvas id = "canvas" ></canvas>
-    <div style="float:left;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">
-    	<b>Users</b>
-    	<div id="users"></div>
-    </div>
-    <div style="float:left;width:300px;height:250px;overflow:scroll-y;padding:10px;">
+    <div class = "chatBox">
+      <div class = "chatHeader">
+        <a class="closebtn">&times;</a>
+      </div>
+      <div class = "userPanel" >
+      	<b>Users</b>
+      	<div id="users"></div>
+      </div>
+      <div class = "chatPanel">
+      	<div id="conversation"></div>
+      </div>
+      <div class = "messageButton">
+        <input id="data" style="width:200px;" />
+        <input type="button" id="datasend" value="send" />
+      </div>
 
-    	<div id="conversation"></div>
-    	<input id="data" style="width:200px;" />
-    	<input type="button" id="datasend" value="send" />
-      <div>
+      <div class = "inviteUrl">
           <label class ="invite"></label>
           <br>
           <label class ="url"></label>
       </div>
+    </div>
+
+    <div class "chatButton">
+      <a class="openbtn">&times;</a>
     </div>
 
 
